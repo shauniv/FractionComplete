@@ -785,7 +785,7 @@ class FractionRemaining extends WatchUi.SimpleDataField
     var FractionsCount = 774;
 
     
-    function BinarySearchFractionsTwo(value as Double) as String
+    function BinarySearchFractions(value as Double) as String
     {
         var low = 0;
         var high = FractionsCount - 1;
@@ -823,7 +823,7 @@ class FractionRemaining extends WatchUi.SimpleDataField
         {
             var totalDistance = info.distanceToDestination + info.elapsedDistance as Double;
             var completed = (1.0 * info.elapsedDistance) / totalDistance as Double;
-            return BinarySearchFractionsTwo(completed) as String;
+            return BinarySearchFractions(completed) as String;
         }
 
         return result;
