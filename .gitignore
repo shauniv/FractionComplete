@@ -341,3 +341,6 @@ healthchecksdb
 
 # Connect IQ output directory
 bin/
+gen/
+internal-mir/
+mir/

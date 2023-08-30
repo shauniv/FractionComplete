@@ -23,12 +23,20 @@ namespace Fractions
         {
             private int numerator;
             private int denominator;
+            private String display;
 
             public Fraction(int numerator, int denominator) 
             {
                 this.numerator = numerator;
                 this.denominator = denominator;
+                display = String.Format("{0}/{1}", numerator, denominator);
             }
+            public Fraction(int numerator, int denominator, string display) 
+                : this(numerator, denominator)
+            {
+                this.display = display;
+            }
+
             public double Value 
             { 
                 get 
@@ -45,11 +53,7 @@ namespace Fractions
             {
                 get
                 {
-                    if (denominator == 0)
-                    {
-                        return "--";
-                    }
-                    return String.Format("{0}/{1}", numerator, denominator);
+                    return display;
                 }
             }
         }
@@ -65,9 +69,9 @@ namespace Fractions
         static void Main(string[] args)
         {
             List<Fraction> list = new List<Fraction>();
-            list.Add(new Fraction(0, 0));
             int minDenominator = int.Parse(args[0]);
             int maxDenominator = int.Parse(args[1]);
+            list.Add(new Fraction(0, 0, String.Format("<1/{0}", maxDenominator)));
             for (int denominator = minDenominator; denominator <= maxDenominator; denominator++) 
             { 
                 for (int numerator = 1; numerator < denominator; ++numerator)

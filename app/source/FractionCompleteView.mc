@@ -7,7 +7,7 @@ class FractionRemaining extends WatchUi.SimpleDataField
 {
     var FractionsList = 
     [
-      ["--", 0],
+      ["<1/50", 0],
       ["1/50", 0.02],
       ["1/49", 0.0204081632653061],
       ["1/48", 0.0208333333333333],
@@ -818,7 +818,7 @@ class FractionRemaining extends WatchUi.SimpleDataField
 
     function compute(info as Activity.Info) as Numeric or Duration or String or Null
     {
-        var result = FractionsList[0][0];
+        var result = "--";
         if (info.elapsedDistance != null && info.distanceToDestination != null && info.elapsedDistance != 0 && info.distanceToDestination != 0)
         {
             var totalDistance = info.distanceToDestination + info.elapsedDistance as Double;
